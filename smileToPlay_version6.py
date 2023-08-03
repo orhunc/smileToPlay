@@ -9,30 +9,10 @@ from VideoGet import VideoGet
 import threading
 import queue
 from playsound import playsound
-
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-from PIL import Image, ImageFont, ImageDraw
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import visualizer
 
 
-sns.set()
 
-EMOTIONS_LIST = ["Angry", "Disgust", "Fear", "Happy", "Neutral", "Sad", "Surprise"]
-last_time = time.time()
-previous_pred = {emotion: 0 for emotion in EMOTIONS_LIST}
-
-fig, ax = plt.subplots(figsize=(6, 3), dpi=80)
-line, = ax.plot([], [], color='hotpink', linewidth=2)
-ax.set_xlim(0, 100)
-ax.set_ylim(0, 1)
-ax.grid(color='gray', linestyle='-', linewidth=0.5)
-ax.set_ylabel("Happiness Trend")
-canvas = FigureCanvas(fig)
-
-happiness_predictions = []
 
 
 #load models
