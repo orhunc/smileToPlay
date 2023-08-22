@@ -71,6 +71,23 @@ def main(pred_array):
     return plot_img, scoreboard_img_cv
 
 
+def showSmileQuality(section, fakeness, smileQuality):
+        #emotions scoreboard
+        smile_scoreboard_img = Image.new('RGB', (400, 100), (255,255,255)) # create a new white image
+        draw = ImageDraw.Draw(smile_scoreboard_img)
+        font_scoreboard = ImageFont.truetype("digital-7 (mono).ttf", 15) # load digital font
+        tmp =5
+        if section > 9:
+            text = "Fakeness: " + str(fakeness) + "%" + "\n" +"Smile Quality: " + str(smileQuality) + "/100"
+        else: 
+            text = ""
+
+        print(text)
+        draw.text((10, 0), text, fill='black', font=font_scoreboard) 
+        
+        
+        smile_scoreboard_img_cv = np.array(smile_scoreboard_img) 
+        return smile_scoreboard_img_cv
 
 def noFace():
     global previous_pred
