@@ -1,0 +1,10 @@
+opencv-python==4.8.0.76
+tensorflow==2.13.0
+pygame
+pyvidplayer2
+numpy==1.24.3
+mediapipe==0.10.9
+playsound
+errno
+pymediainfo
+ffpyplayer
